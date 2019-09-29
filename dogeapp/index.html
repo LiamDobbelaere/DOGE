@@ -4,15 +4,83 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="screen.css" />
     <title>DOGE - Digaly's Open Game Editor</title>
   </head>
   <body>
+    <div id="container">
+      <section id="sidebar">
+        <ul id="tree">
+          <li>
+            <span><a href="#" class="tree-button"></a>Sprites</span>
+            <ul class="tree-nested" id="tree-sprites"></ul>
+          </li>
+        </ul>
+      </section>
+      <section id="main-content">
+        <img src="" id="test-image" />
+      </section>
+    </div>
+
     <script>
       const fs = require("fs");
+      const path = require("path");
+      let project = {};
 
-      const root = fs.readdirSync("/");
+      const projectDirectory = path.join(
+        __dirname,
+        "../../DOGE-PC/project-examples/basic"
+      );
 
-      console.log(root);
+      project = JSON.parse(
+        fs.readFileSync(path.join(projectDirectory, "doge.project.json"))
+      );
+      project.sprites = {};
+
+      function setupTree() {
+        let treeButtons = document.getElementsByClassName("tree-button");
+        for (let i = 0; i < treeButtons.length; i++) {
+          treeButtons[i].addEventListener("click", function() {
+            this.parentElement.parentElement
+              .querySelector(".tree-nested")
+              .classList.toggle("active");
+            this.classList.toggle("expanded");
+          });
+        }
+      }
+
+      setupTree();
+
+      const spritesList = fs
+        .readdirSync(path.join(projectDirectory, "sprites"))
+        .filter(fname => fname !== "assets");
+
+      spritesList.forEach(spriteFile => {
+        const spriteName = spriteFile.split(".")[0];
+
+        project.sprites[spriteName] = JSON.parse(
+          fs.readFileSync(path.join(projectDirectory, "/sprites", spriteFile))
+        );
+      });
+
+      const treeSprites = document.getElementById("tree-sprites");
+      spritesList
+        .map(fname => fname.split(".")[0])
+        .forEach(spriteName => {
+          const newLi = document.createElement("li");
+          newLi.innerText = spriteName;
+          newLi.addEventListener("click", function() {
+            console.log(project.sprites[spriteName]);
+            document.getElementById("test-image").src = path.join(
+              projectDirectory,
+              "/sprites/assets",
+              project.sprites[spriteName].image
+            );
+          });
+
+          treeSprites.appendChild(newLi);
+        });
     </script>
   </body>
 </html>

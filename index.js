@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, Menu } = require("electron");
 const path = require("path");
 
 function createWindow() {
@@ -9,8 +9,11 @@ function createWindow() {
     icon: path.join(__dirname, "icon.png"),
     webPreferences: {
       nodeIntegration: true
-    }
+    },
+    darkTheme: true
   });
+
+  //Menu.setApplicationMenu(null);
 
   // and load the index.html of the app.
   win.loadFile(path.join(__dirname, "dogeapp/index.html"));

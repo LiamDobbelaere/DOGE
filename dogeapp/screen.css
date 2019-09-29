@@ -1,0 +1,75 @@
+html,
+body {
+  height: 100%;
+  --color-background-darker: #15151e;
+  --color-background: #25252b;
+  --color-background-lighter: #494954;
+  --color-foreground: #2a8271;
+  --color-text: #ddd;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color-background);
+  display: flex;
+  color: var(--color-text);
+}
+
+#container {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+#main-content {
+  flex: 1;
+}
+
+#sidebar {
+  min-width: 170px;
+  border-right: 2px solid var(--color-foreground);
+  background-color: var(--color-background-darker);
+}
+
+#tree {
+  padding: 8px;
+}
+
+#tree li span {
+  display: flex;
+  flex-direction: row;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.tree-button {
+  margin-right: 8px;
+  border: 1px solid var(--color-foreground);
+  text-decoration: none;
+  color: var(--color-foreground);
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 12px;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+}
+
+.tree-button::after {
+  content: "+";
+}
+
+.tree-button.expanded::after {
+  content: "-";
+}
+
+.tree-nested {
+  display: none;
+  background-color: var(--color-background);
+  padding: 4px;
+}
+
+.tree-nested.active {
+  display: block;
+}
