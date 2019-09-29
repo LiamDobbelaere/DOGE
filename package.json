@@ -1,0 +1,29 @@
+{
+  "name": "doge",
+  "version": "0.1.0",
+  "description": "DOGE is a visual game editor built on top of Phaser",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomDobbelaere/DOGE.git"
+  },
+  "keywords": [
+    "open",
+    "source",
+    "game",
+    "editor"
+  ],
+  "author": "Tom Dobbelaere (Digaly)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TomDobbelaere/DOGE/issues"
+  },
+  "homepage": "https://github.com/TomDobbelaere/DOGE#readme",
+  "devDependencies": {
+    "electron": "^6.0.10"
+  }
+}
