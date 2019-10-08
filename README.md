@@ -1,0 +1,82 @@
+<p align="center">
+  <img width="128" height="128" src="https://raw.githubusercontent.com/TomDobbelaere/DOGE/master/icon.png">
+</p>
+
+# DOGE - Digaly's Open Game Editor
+
+## Feature roadmap
+
+- Sprites ![](https://raw.githubusercontent.com/TomDobbelaere/DOGE/master/README%20assets/0.png)
+  - Naming
+  - Load from file
+  - Display width and height
+  - Display amount of frames (if applicable)
+  - Set X and Y origin
+  - Set origin to center (button)
+  - Set collision mask
+    - Shape
+      - Bounding box
+      - Custom rectangle
+      - Circular shape
+    - Size
+      - Top, left, bottom and right
+- Sound ![](https://raw.githubusercontent.com/TomDobbelaere/DOGE/master/README%20assets/2.png)
+  - Load from file
+  - Set starting volume
+- Backgrounds ![](https://raw.githubusercontent.com/TomDobbelaere/DOGE/master/README%20assets/2.png)
+  - Load from file
+  - Is tileset checkbox
+    - Set tile width
+    - Set tile height
+- Scripting extensions ![](https://raw.githubusercontent.com/TomDobbelaere/DOGE/master/README%20assets/0.png)
+  - Globals
+  - ...
+- Paths?
+- Time lines?
+- Fonts
+  - Load from file
+  - Set size?
+- Objects
+  - Naming
+  - Select starting sprite
+  - Visibility flag
+  - Solid flag
+  - Persistent flag
+  - Depth
+  - Event hooks
+    - Create
+    - Tick
+    - PreTick
+    - PostTick
+    - Collision
+    - Keyboard
+      - Key press
+      - Key hold
+      - Key release
+    - Mouse
+      - Button press
+      - Button hold
+      - Button release
+    - Out of bounds
+    - Draw?
+    - Destroy
+  - Rooms
+    - Naming
+    - Set size
+    - Grid
+      - Snap to grid
+      - Set grid size
+    - Tiles
+      - Select used tilemap
+      - Add and remove tiles from a tilemap
+      - Different layers
+    - Objects
+      - Select object
+      - Add and remove objets
+      - Set instance scale
+      - Set instance specific code
+    - Backgrounds
+      - Set background
+      - Set background horizontal/vertical speed
+      - Set background repetition
+      - Set background as foreground
