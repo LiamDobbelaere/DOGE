@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/TomDobbelaere/DOGE#readme",
   "devDependencies": {
-    "electron": "^6.0.10"
+    "electron": "^15.5.5"
   }
 }
